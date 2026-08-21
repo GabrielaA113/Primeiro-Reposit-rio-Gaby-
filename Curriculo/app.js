@@ -1,0 +1,1 @@
+ alert("Olá Mundo!") /*Isso cria um pop-up dizendo "olá Mundo"*/
