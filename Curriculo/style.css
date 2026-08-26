@@ -1,11 +1,9 @@
 body {
-      /* cor de fundo */
-       background-color: white;
+       background-color: white; /* cor de fundo */
 }
 
 .contato {
-     /*cor da linha */
-     border: 2px solid black;
+     border: 2px solid black; /* cor da linha */
      background-color: moccasin;
 
  
@@ -13,20 +11,17 @@ body {
 
 .info {
     border:1px solid green;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor */
 
 }
 
 
 .mim {
-    boder: 1px solid black;
-    /* fonte */
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    /* cor da letra */
-    color: black;
+    font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes */
+    font-weight: bold; /* Define o peso da fonte como negrito */
+    color: black; /* cor da letra */
     background-color: moccasin;
     
 } 
