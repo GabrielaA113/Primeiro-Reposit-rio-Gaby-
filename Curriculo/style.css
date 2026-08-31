@@ -1,19 +1,24 @@
 body {
        background-color: white; /* cor de fundo */
+     
+
+
 }
 
 .contato {
      border: 2px solid black; /* cor da linha */
      background-color: moccasin;
-
- 
+     
+     
+     
+     
 }
 
 .info {
     border:1px solid green;
-    display: flex; /* Define o contêiner como um flex container */
-    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
-    justify-content: space-around; /* Distribui os itens com espaço ao redor */
+    
+    
+    
 
 }
 
@@ -33,4 +38,109 @@ body {
     font-weight: bold;
     color: black;
     background-color: moccasin;
+}
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0px; /* Remove a margem padrão de todos os elementos */
+    padding: 0px; /* Remove o preenchimento padrão de todos os elementos */
+}
+
+/*CSS vem aqui em baixo*/
+
+header {
+    background-color: moccasin; /* Define a cor de fundo do cabeçalho */
+    padding: 20px 0px; /* Adiciona um preenchimento de 10 pixels ao redor do conteúdo do cabeçalho */
+    position: fixed; /* Define a posição do cabeçalho como fixa */
+    border: 2px solid black; /* Adiciona uma borda preta de 2 pixels ao redor do cabeçalho */
+    width: 100%; /* Define a largura do cabeçalho como 100% da largura da janela */
+    
+}
+
+body {
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif'; /* Define a família de fontes do corpo */
+    
+}
+
+body a {
+    text-transform: uppercase; /* Transforma o texto dos links em maiúsculas */
+    text-decoration: none; /* Remove a decoração padrão dos links */
+    color: black; /* Define a cor dos links como preto */
+
+}
+
+body a:hover {
+    text-decoration: none; /* Adiciona sublinhado aos links quando o mouse passa sobre eles */
+    font-weight: bold; /* Define o peso da fonte como negrito quando o mouse passa sobre os links */
+    transition-duration: 250ms; /* Define a duração da transição */
+    
+}
+
+#apres {
+      margin-bottom: 20px; /* Adiciona uma margem inferior de 20 pixels */  
+      background-color: moccasin; /* Define a cor de fundo da seção de apresentação */
+      padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */ 
+      border: 2px solid black; /* Adiciona uma borda preta de 2 pixels ao redor da seção de apresentação */
+      justify-content: space-around; /* Distribui os itens com espaço ao redor */
+      
+}
+
+#contato {
+    margin-top: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
+    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+}
+
+#objetivos {
+    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
+    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */ 
+}
+
+#formacao {
+    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
+    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+}
+
+#habilidades {
+    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
+    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+}
+
+#projetos {
+    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
+    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+}
+
+
+footer {
+    background-color: moccasin; /* Define a cor de fundo do rodapé */ 
+}
+
+footer ul {
+      display: flex; /* Define o contêiner como um flex container */
+      flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+
+}
+
+.icon {
+    fill: white; /* Define a cor de preenchimento do ícone como branco */
+    stroke: black; /* Define a cor da borda do ícone como preto */
+    stroke-width: 5px; /* Define a largura da borda do ícone como 1 pixel */
+    width: 50px; /* Define a largura do ícone como 50 pixels */
 }
