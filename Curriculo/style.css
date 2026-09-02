@@ -118,6 +118,7 @@ body a:hover {
     padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
     display: flex; /* Define o contêiner como um flex container */
     flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+    
 }
 
 #projetos {
@@ -129,18 +130,30 @@ body a:hover {
 
 
 footer {
-    background-color: moccasin; /* Define a cor de fundo do rodapé */ 
+    background-color: moccasin; /* Define a cor de fundo do rodapé */
+    border: 2px solid black; /* Adiciona uma borda preta de 2 pixels ao redor da seção de apresentação */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor */
+    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */ 
+    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+    
 }
+
+
 
 footer ul {
       display: flex; /* Define o contêiner como um flex container */
+      justify-content: space-around; /* Distribui os itens com espaço ao redor */
       flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+      list-style-type: none; /* Remove os marcadores da lista */
 
 }
 
-.icon {
-    fill: white; /* Define a cor de preenchimento do ícone como branco */
+.icone {
+    fill: black; /* Define a cor de preenchimento do ícone como branco */
     stroke: black; /* Define a cor da borda do ícone como preto */
     stroke-width: 5px; /* Define a largura da borda do ícone como 1 pixel */
     width: 50px; /* Define a largura do ícone como 50 pixels */
+    height: 50px; /* Define a altura do ícone como 50 pixels */
 }
