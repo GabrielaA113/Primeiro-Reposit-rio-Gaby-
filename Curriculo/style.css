@@ -133,7 +133,7 @@ footer {
     background-color: moccasin; /* Define a cor de fundo do rodapé */
     border: 2px solid black; /* Adiciona uma borda preta de 2 pixels ao redor da seção de apresentação */
     justify-content: space-around; /* Distribui os itens com espaço ao redor */
-    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */ 
+    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
     padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
     display: flex; /* Define o contêiner como um flex container */
     flex-direction: row; /* Define a direção dos itens flexíveis como linha */
