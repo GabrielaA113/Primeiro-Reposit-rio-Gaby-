@@ -14,20 +14,13 @@ body {
      
 }
 
-.info {
-    border:1px solid green;
-    
-    
-    
-
-}
-
 
 .mim {
     font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes */
     font-weight: bold; /* Define o peso da fonte como negrito */
     color: black; /* cor da letra */
     background-color: moccasin;
+    display: flex; /* Define o contêiner como um flex container */
     
 } 
 
@@ -87,6 +80,7 @@ body a:hover {
       margin-bottom: 20px; /* Adiciona uma margem inferior de 20 pixels */  
       background-color: moccasin; /* Define a cor de fundo da seção de apresentação */
       padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */ 
+      padding-inline: 20px; /* Adiciona um preenchimento interno de 20 pixels */
       border: 2px solid black; /* Adiciona uma borda preta de 2 pixels ao redor da seção de apresentação */
       justify-content: space-around; /* Distribui os itens com espaço ao redor */
       
@@ -95,35 +89,56 @@ body a:hover {
 #contato {
     margin-top: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
     padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    padding-inline: 20px; /* Adiciona um preenchimento interno de 20 pixels */
     display: flex; /* Define o contêiner como um flex container */
     flex-direction: row; /* Define a direção dos itens flexíveis como linha */
 }
 
-#objetivos {
-    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
-    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
-    display: flex; /* Define o contêiner como um flex container */
-    flex-direction: row; /* Define a direção dos itens flexíveis como linha */ 
-}
+    
 
 #formacao {
-    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
+    margin-bottom: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */ 
     padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    padding-inline: 20px; /* Adiciona um preenchimento interno de 20 pixels */
     display: flex; /* Define o contêiner como um flex container */
     flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+}
+
+
+.HabilidadesContainer {
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor */
+    padding-block: 20px; /* Adiciona um preenchimento vertical de 20 pixels */
+}
+
+.HabilidadesBloco {
+    list-style-type: none; /* Remove os marcadores da lista */
+    display: flex;
+    flex-direction: column; /* Define a direção dos itens flexíveis como linha */
+    
+
+    
 }
 
 #habilidades {
     margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
-    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    padding-top: 60px; /* Adiciona um preenchimento superior de 60 pixels */
+    padding-inline: 20px; /* Adiciona um preenchimento interno de 20 pixels */
     display: flex; /* Define o contêiner como um flex container */
     flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+    padding-block: 20px; /* Adiciona um preenchimento vertical de 20 pixels */
+}
+
+#habilidades h3 {
+    text-align: center; /* Centraliza o texto do título */
     
 }
 
 #projetos {
     margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
     padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    padding-inline: 20px; /* Adiciona um preenchimento interno de 20 pixels */
     display: flex; /* Define o contêiner como um flex container */
     flex-direction: row; /* Define a direção dos itens flexíveis como linha */
 }
@@ -153,7 +168,50 @@ footer ul {
 .icone {
     fill: black; /* Define a cor de preenchimento do ícone como branco */
     stroke: black; /* Define a cor da borda do ícone como preto */
-    stroke-width: 5px; /* Define a largura da borda do ícone como 1 pixel */
+    stroke-width: 0px; /* Define a largura da borda do ícone como 1 pixel */
     width: 50px; /* Define a largura do ícone como 50 pixels */
     height: 50px; /* Define a altura do ícone como 50 pixels */
+}
+
+.IconesContainer {
+    border: 1px solid black; /* Adiciona uma borda preta de 1 pixel ao redor do contêiner de ícones */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-wrap: row; /* Define a direção dos itens flexíveis como linha */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    justify-content: center; /* Distribui os itens com espaço ao redor */
+    gap: 5px; /* Adiciona um espaçamento de 5 pixels entre os itens */
+    padding: 5px; /* Adiciona um preenchimento interno de 5 pixels */
+    background-color: moccasin; /* Define a cor de fundo do contêiner de ícones */
+}
+
+.BlockIcon {
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+    padding: 5px; /* Adiciona um preenchimento interno de 5 pixels */
+    
+}
+
+.LinksIcon {
+    width: 45px; /* Define a largura do ícone como 45 pixels */
+    fill: black; /* Define a cor de preenchimento do ícone como preto */
+    stroke: black; /* Define a cor da borda do ícone como preto */
+    stroke-width: 1px; /* Define a largura da borda do ícone como 1 pixel */
+    height: 45px; /* Define a altura do ícone como 45 pixels */
+    
+    
+}
+
+.blockIcon {
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: column; /* Define a direção dos itens flexíveis como coluna */
+    padding: 5px; /* Adiciona um preenchimento interno de 5 pixels */
+}
+
+#objetivos {
+    margin: 20px 0px; /* Adiciona uma margem inferior de 20 pixels */
+    padding-top: 20px; /* Adiciona um preenchimento superior de 20 pixels */
+    padding-inline: 20px; /* Adiciona um preenchimento interno de 20 pixels */
+    display: flex; /* Define o contêiner como um flex container */
+    flex-direction: row; /* Define a direção dos itens flexíveis como linha */
+    
 }
