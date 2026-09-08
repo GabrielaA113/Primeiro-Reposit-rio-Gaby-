@@ -19,12 +19,12 @@
         <span class="brand-fallback" hidden>DESCUBRA<br><strong>O SENAC!</strong></span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
-        <a href="#inicio">INÍCIO</a>
-        <a href="#cursos">CURSOS</a>
-        <a href="#explorar">EXPLORAR</a>
-        <a href="#missoes">MISSÕES</a>
-        <a href="#jogos">JOGOS</a>
-        <a href="#senaquinho">SENAQUINHO</a>
+        <a href="#inicio" data-i18n="nav.home">INÍCIO</a>
+        <a href="#cursos" data-i18n="nav.courses">CURSOS</a>
+        <a href="#explorar" data-i18n="nav.explore">EXPLORAR</a>
+        <a href="#missoes" data-i18n="nav.missions">MISSÕES</a>
+        <a href="#jogos" data-i18n="nav.games">JOGOS</a>
+        <a href="#senaquinho" data-i18n="nav.senaquinho">SENAQUINHO</a>
       </nav>
       <div class="header-actions">
         <button class="icon-button" id="soundToggle" aria-label="Ativar ou desativar som" title="Som">🔊</button>
@@ -34,7 +34,7 @@
       </div>
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile">
-      <a href="#inicio">INÍCIO</a><a href="#cursos">CURSOS</a><a href="#explorar">EXPLORAR</a><a href="#missoes">MISSÕES</a><a href="#jogos">JOGOS</a><a href="#senaquinho">SENAQUINHO</a>
+      <a href="#inicio" data-i18n="nav.home">INÍCIO</a><a href="#cursos" data-i18n="nav.courses">CURSOS</a><a href="#explorar" data-i18n="nav.explore">EXPLORAR</a><a href="#missoes" data-i18n="nav.missions">MISSÕES</a><a href="#jogos" data-i18n="nav.games">JOGOS</a><a href="#senaquinho" data-i18n="nav.senaquinho">SENAQUINHO</a>
     </nav>
   </header>
 
@@ -44,7 +44,7 @@
       <div class="hero-overlay"></div>
       <div class="hero-layout container">
         <aside class="player-panel panel pixel-border" aria-label="Painel do jogador">
-          <div class="panel-title">JOGADOR</div>
+          <div class="panel-title" data-i18n="panel.playerTitle">JOGADOR</div>
           <div class="avatar-small mascot-mini"><img src="assets/personagens/senaquinho.png" alt="Senaquinho" onerror="this.style.display='none'; this.parentElement.classList.add('no-image');" /><span aria-hidden="true">S</span></div>
           <div class="player-name" id="playerNameLabel">Estudante</div>
           <div class="player-level" id="playerLevelLabel">NÍVEL 3</div>
@@ -59,45 +59,45 @@
             <div class="energy" id="energyIcons" aria-label="5 de 5 de energia"></div>
           </div>
           <div class="stat-block mission-mini">
-            <div class="mini-heading"><img src="assets/icones/missao.png" alt="" onerror="this.style.display='none';"> MISSÃO ATUAL</div>
+            <div class="mini-heading"><img src="assets/icones/missao.png" alt="" onerror="this.style.display='none';"> <span data-i18n="mission.current">MISSÃO ATUAL</span></div>
             <strong id="currentMissionLabel">Conhecer o Campus</strong>
             <button class="pixel-button small" data-open="missions">VER MISSÕES</button>
           </div>
           <div class="stat-block">
-            <div class="stat-row"><span class="stat-label"><img src="assets/icones/trofeu.png" alt="" onerror="this.style.display='none';">CONQUISTAS</span><strong id="achievementText">0 / 8</strong></div>
+            <div class="stat-row"><span class="stat-label"><img src="assets/icones/trofeu.png" alt="" onerror="this.style.display='none';"><span data-i18n="achievements">CONQUISTAS</span></span><strong id="achievementText">0 / 8</strong></div>
             <div class="progress"><span id="achievementBar"></span></div>
             <button class="pixel-button small secondary" data-open="achievements">VER CONQUISTAS</button>
           </div>
         </aside>
 
         <div class="hero-center" id="senaquinho">
-          <div class="speech-bubble pixel-border" id="heroSpeech" aria-live="polite">Oi! Eu sou o Senaquinho!<br>Vamos descobrir o Senac juntos?</div>
+          <div class="speech-bubble pixel-border" id="heroSpeech" aria-live="polite" data-i18n="hero.greeting">Oi! Eu sou o Senaquinho!<br>Vamos descobrir o Senac juntos?</div>
           <div class="mascot-wrap" id="mascotWrap">
             <img src="assets/personagens/senaquinho.png" alt="Senaquinho, mascote do Descubra o Senac" class="mascot" onerror="this.src=''; this.alt='Senaquinho (adicione assets/personagens/senaquinho.png)'; this.classList.add('missing-asset');" />
             <div class="mascot-placeholder" aria-hidden="true">SENA<br>QUINHO</div>
           </div>
           <div class="hero-cta">
-            <button class="pixel-button primary" id="startJourney">COMEÇAR JORNADA</button>
+            <button class="pixel-button primary" id="startJourney" data-i18n="btn.startJourney">COMEÇAR JORNADA</button>
           </div>
         </div>
 
         <aside class="journey-panel panel pixel-border">
-          <div class="panel-title">JORNADA DO<br>ESTUDANTE</div>
-          <p>Complete missões, explore a escola, descubra cursos e prepare seu futuro com o Senac!</p>
+          <div class="panel-title" data-i18n="journey.title">JORNADA DO<br>ESTUDANTE</div>
+          <p data-i18n="journey.desc">Complete missões, explore a escola, descubra cursos e prepare seu futuro com o Senac!</p>
           <div class="journey-steps" aria-label="Etapas da jornada">
             <span class="step done">1</span><i></i><span class="step active">2</span><i></i><span class="step">3</span><i></i><span class="step">4</span>
           </div>
-          <button class="pixel-button primary" id="startJourneySide">COMEÇAR JORNADA</button>
-          <button class="pixel-button secondary" data-open="howto">COMO FUNCIONA?</button>
+          <button class="pixel-button primary" id="startJourneySide" data-i18n="btn.startJourney">COMEÇAR JORNADA</button>
+          <button class="pixel-button secondary" data-open="howto" data-i18n="btn.howItWorks">COMO FUNCIONA?</button>
         </aside>
       </div>
     </section>
 
     <section class="quick-cards section-sm container" aria-label="Atalhos principais">
-      <article class="feature-card blue"><div class="card-icon"> <img src="assets/icones/livro.png" alt="Ícone de cursos" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>📚</span></div><h2>CONHECER CURSOS</h2><p>Descubra áreas e cursos que o Senac oferece.</p><button class="pixel-button" data-scroll="#cursos">EXPLORAR CURSOS</button></article>
-      <article class="feature-card purple"><div class="card-icon"> <img src="assets/cenarios/campus.png" alt="Mapa do campus" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>🗺️</span></div><h2>EXPLORAR SENAC</h2><p>Faça uma visita virtual pela unidade Senac Largo Treze.</p><button class="pixel-button" data-scroll="#explorar">EXPLORAR AGORA</button></article>
-      <article class="feature-card orange"><div class="card-icon"> <img src="assets/icones/missao.png" alt="Ícone de missões" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>📜</span></div><h2>MISSÕES</h2><p>Participe de missões e ganhe XP.</p><button class="pixel-button" data-open="missions">VER MISSÕES</button></article>
-      <article class="feature-card green"><div class="card-icon"> <img src="assets/icones/controle.png" alt="Ícone de jogos e recompensas" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>🕹️</span></div><h2>JOGUINHOS</h2><p>Divirta-se com jogos educativos e recompensas.</p><button class="pixel-button" data-scroll="#jogos">JOGAR AGORA</button></article>
+      <article class="feature-card blue"><div class="card-icon"> <img src="assets/icones/livro.png" alt="Ícone de cursos" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>📚</span></div><h2 data-i18n="quick.learnCourses.title">CONHECER CURSOS</h2><p data-i18n="quick.learnCourses.desc">Descubra áreas e cursos que o Senac oferece.</p><button class="pixel-button" data-scroll="#cursos" data-i18n="btn.explore">EXPLORAR CURSOS</button></article>
+      <article class="feature-card purple"><div class="card-icon"> <img src="assets/cenarios/campus.png" alt="Mapa do campus" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>🗺️</span></div><h2 data-i18n="quick.explore.title">EXPLORAR SENAC</h2><p data-i18n="quick.explore.desc">Faça uma visita virtual pela unidade Senac Largo Treze.</p><button class="pixel-button" data-scroll="#explorar" data-i18n="btn.explore">EXPLORAR AGORA</button></article>
+      <article class="feature-card orange"><div class="card-icon"> <img src="assets/icones/missao.png" alt="Ícone de missões" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>📜</span></div><h2 data-i18n="quick.missions.title">MISSÕES</h2><p data-i18n="quick.missions.desc">Participe de missões e ganhe XP.</p><button class="pixel-button" data-open="missions" data-i18n="btn.viewMissions">VER MISSÕES</button></article>
+      <article class="feature-card green"><div class="card-icon"> <img src="assets/icones/controle.png" alt="Ícone de jogos e recompensas" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>🕹️</span></div><h2 data-i18n="quick.games.title">JOGUINHOS</h2><p data-i18n="quick.games.desc">Divirta-se com jogos educativos e recompensas.</p><button class="pixel-button" data-scroll="#jogos" data-i18n="btn.play">JOGAR AGORA</button></article>
     </section>
 
     <section class="content-section section" id="cursos">
@@ -105,8 +105,8 @@
         <div class="section-heading"><span class="eyebrow">QUEST</span><h2>DESCUBRA SEU CURSO</h2><p>Explore áreas e encontre uma trilha que combina com você.</p></div>
         <div class="course-grid" id="courseGrid"></div>
         <div class="quiz-banner pixel-border">
-          <div><span class="eyebrow">DESAFIO DO SENAQUINHO</span><h3>QUAL CURSO COMBINA COM VOCÊ?</h3><p>Responda 5 perguntas e descubra uma recomendação.</p></div>
-          <button class="pixel-button primary" data-open="quiz">FAZER QUIZ</button>
+          <div><span class="eyebrow">DESAFIO DO SENAQUINHO</span><h3 data-i18n="quiz.banner.title">QUAL CURSO COMBINA COM VOCÊ?</h3><p data-i18n="quiz.banner.desc">Responda 5 perguntas e descubra uma recomendação.</p></div>
+          <button class="pixel-button primary" data-open="quiz" data-i18n="btn.play">FAZER QUIZ</button>
         </div>
       </div>
     </section>
@@ -138,7 +138,7 @@
 
     <section class="content-section dark section" id="jogos">
       <div class="container">
-        <div class="section-heading light"><span class="eyebrow">ARCADE</span><h2>JOGUINHOS DO SENAQUINHO</h2><p>Minijogos rápidos para ganhar XP e desbloquear conquistas.</p></div>
+        <div class="section-heading light"><span class="eyebrow">ARCADE</span><h2 data-i18n="games.section.title">JOGUINHOS DO SENAQUINHO</h2><p>Minijogos rápidos para ganhar XP e desbloquear conquistas.</p></div>
         <div class="game-grid" id="gameGrid"></div>
         <div class="arcade-preview pixel-border">
           <div class="arcade-screen"><div class="arcade-title">DESAFIO RÁPIDO</div><div class="arcade-prompt">QUAL ITEM NÃO DEVE IR NA MOCHILA?</div><div class="arcade-options"><button class="arcade-option" data-answer="wrong"><img src="assets/cenarios/biblioteca.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>📕</span> Livro</button><button class="arcade-option" data-answer="wrong"><img src="assets/icones/lapis.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>✏️</span> Caneta</button><button class="arcade-option" data-answer="correct"><img src="assets/icones/missao.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"><span hidden>🛏️</span> Travesseiro</button></div><div class="arcade-feedback" id="arcadeFeedback"></div></div>
@@ -148,7 +148,7 @@
 
     <section class="content-section section" id="progresso">
       <div class="container">
-        <div class="section-heading"><span class="eyebrow">PERFIL</span><h2>SEU PROGRESSO</h2><p>Seu progresso é salvo neste navegador.</p></div>
+        <div class="section-heading"><span class="eyebrow">PERFIL</span><h2 data-i18n="profile.progressTitle">SEU PROGRESSO</h2><p>Seu progresso é salvo neste navegador.</p></div>
         <div class="progress-dashboard">
           <div class="dashboard-card pixel-border"><span>XP TOTAL</span><strong id="dashboardXp">300</strong></div>
           <div class="dashboard-card pixel-border"><span>NÍVEL</span><strong id="dashboardLevel">3</strong></div>
@@ -159,9 +159,9 @@
     </section>
   </main>
 
-  <div class="chat-widget" id="chatWidget">
-    <div class="chat-callout">Dúvidas?<br>Fale comigo!</div>
-    <button class="chat-mascot" id="chatOpen" aria-label="Conversar com o Senaquinho"><img src="assets/personagens/senaquinho.png" alt="Senaquinho" onerror="this.style.display='none'; this.parentElement.classList.add('no-image');" /><span aria-hidden="true">S</span></button>
+    <div class="chat-widget" id="chatWidget">
+    <div class="chat-callout" data-i18n="chat.callout">Dúvidas?<br>Fale comigo!</div>
+    <button class="chat-mascot" id="chatOpen" aria-label="Conversar com o Senaquinho" data-i18n-aria="chat.openAria"><img src="assets/personagens/senaquinho.png" alt="Senaquinho" onerror="this.style.display='none'; this.parentElement.classList.add('no-image');" /><span aria-hidden="true">S</span></button>
   </div>
 
   <div class="modal-backdrop" id="modalBackdrop" hidden>

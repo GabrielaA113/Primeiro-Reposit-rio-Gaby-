@@ -3,8 +3,30 @@
    Estado, UI, missões, quiz, minigame, chat e persistência.
    ========================================================== */
 
-const STORAGE_KEY = "descubraSenacStateV1";
+const STORAGE_KEY = "descubraSenacStateV1";  
 const SOUND_KEY = "descubraSenacSoundV1";
+
+// Internacionalização (i18n)
+let LOCALE = (navigator.language || 'pt-BR').startsWith('en') ? 'en' : 'pt-BR';
+let I18N = {};
+
+async function loadLocale(lang){
+  try{
+    const res = await fetch(`locales/${lang}.json`);
+    if(!res.ok) throw new Error('no locale');
+    I18N = await res.json();
+    LOCALE = lang;
+  }catch(e){
+    console.warn('Falha ao carregar locale', lang, e);
+    if(lang !== 'pt-BR') await loadLocale('pt-BR');
+  }
+}
+function t(key){ return I18N[key] || key; }
+function applyTranslations(){
+  $$('[data-i18n]').forEach(el=>{ const key=el.getAttribute('data-i18n'); if(key){ el.innerHTML = t(key); }});
+  $$('[data-i18n-aria]').forEach(el=>{ const key=el.getAttribute('data-i18n-aria'); if(key) el.setAttribute('aria-label', t(key)); });
+  $$('[data-i18n-title]').forEach(el=>{ const key=el.getAttribute('data-i18n-title'); if(key) el.setAttribute('title', t(key)); });
+}
 
 const LEVELS = [
   { level: 1, title: "Candidato", next: 200 },
@@ -15,10 +37,10 @@ const LEVELS = [
 ];
 
 const COURSES = [
-  { id:"tec", icon:"💻", iconPath:"assets/icones/xp.png", name:"Tecnologia", desc:"Desenvolva soluções, sistemas e habilidades digitais.", tag:"DIGITAL" },
+  { id:"tec", icon:"💻", iconPath:"assets/icones/computador.png", name:"Tecnologia", desc:"Desenvolva soluções, sistemas e habilidades digitais.", tag:"DIGITAL" },
   { id:"adm", icon:"📊", iconPath:"assets/icones/missao.png", name:"Administração", desc:"Organize projetos, processos e negócios com visão profissional.", tag:"GESTÃO" },
   { id:"sau", icon:"🩺", iconPath:"assets/cenarios/sala.png", name:"Saúde", desc:"Conheça carreiras voltadas ao cuidado e ao bem-estar.", tag:"CUIDADO" },
-  { id:"com", icon:"📣", iconPath:"assets/icones/trofeu.png", name:"Comunicação", desc:"Crie mensagens, campanhas e experiências que conectam pessoas.", tag:"CRIATIVIDADE" },
+  { id:"com", icon:"📣", iconPath:"assets/icones/pessoa.png", name:"Comunicação", desc:"Crie mensagens, campanhas e experiências que conectam pessoas.", tag:"CRIATIVIDADE" },
   { id:"gas", icon:"🍳", iconPath:"assets/cenarios/laboratorio.png", name:"Gastronomia", desc:"Transforme ingredientes em experiências e novos sabores.", tag:"PRÁTICA" },
   { id:"mod", icon:"🧵", iconPath:"assets/cenarios/biblioteca.png", name:"Moda", desc:"Explore criação, produção e expressão por meio do design.", tag:"ESTILO" }
 ];
@@ -112,7 +134,11 @@ function formatStatus(m){
 }
 
 function init(){
-  renderCourses(); renderMissions(); renderGames(); renderEnergy(); updateHUD(); bindEvents(); animateHeroText();
+  // carregar locale antes de renderizar textos dinâmicos
+  loadLocale(LOCALE).then(()=>{
+    applyTranslations();
+    renderCourses(); renderMissions(); renderGames(); renderEnergy(); updateHUD(); bindEvents(); animateHeroText();
+  });
 }
 
 function bindEvents(){
@@ -160,7 +186,7 @@ function openAction(action){
 }
 
 function renderCourses(){
-  $('#courseGrid').innerHTML=COURSES.map(c=>`<article class="course-card" data-course-card="${c.id}">${assetMarkup(c.iconPath, c.name, c.icon, 'course-asset')}<span class="course-tag">${c.tag}</span><h3>${c.name}</h3><p>${c.desc}</p><button class="pixel-button" data-course="${c.id}">EXPLORAR</button></article>`).join('');
+  $('#courseGrid').innerHTML=COURSES.map(c=>`<article class="course-card" data-course-card="${c.id}">${assetMarkup(c.iconPath, c.name, c.icon, 'course-asset')}<span class="course-tag">${c.tag}</span><h3>${c.name}</h3><p>${c.desc}</p><button class="pixel-button" data-course="${c.id}">${t('btn.explore')}</button></article>`).join('');
 }
 function renderMissions(){
   $('#missionGrid').innerHTML=MISSIONS.map(m=>{
@@ -189,9 +215,9 @@ function updateHUD(){
 
 function startJourney(){
   state.started=true; saveState(); playTone('start');
-  $('#heroSpeech').innerHTML='Boa! Nossa primeira missão está esperando!';
+  $('#heroSpeech').innerHTML=t('messages.journeyStarted');
   $('#mascotWrap').animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:450});
-  toast('JORNADA INICIADA!');
+  toast(t('messages.journeyStartedToast'));
   openMission(1);
 }
 
