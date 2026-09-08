@@ -3,30 +3,8 @@
    Estado, UI, missões, quiz, minigame, chat e persistência.
    ========================================================== */
 
-const STORAGE_KEY = "descubraSenacStateV1";  
+const STORAGE_KEY = "descubraSenacStateV1";
 const SOUND_KEY = "descubraSenacSoundV1";
-
-// Internacionalização (i18n)
-let LOCALE = (navigator.language || 'pt-BR').startsWith('en') ? 'en' : 'pt-BR';
-let I18N = {};
-
-async function loadLocale(lang){
-  try{
-    const res = await fetch(`locales/${lang}.json`);
-    if(!res.ok) throw new Error('no locale');
-    I18N = await res.json();
-    LOCALE = lang;
-  }catch(e){
-    console.warn('Falha ao carregar locale', lang, e);
-    if(lang !== 'pt-BR') await loadLocale('pt-BR');
-  }
-}
-function t(key){ return I18N[key] || key; }
-function applyTranslations(){
-  $$('[data-i18n]').forEach(el=>{ const key=el.getAttribute('data-i18n'); if(key){ el.innerHTML = t(key); }});
-  $$('[data-i18n-aria]').forEach(el=>{ const key=el.getAttribute('data-i18n-aria'); if(key) el.setAttribute('aria-label', t(key)); });
-  $$('[data-i18n-title]').forEach(el=>{ const key=el.getAttribute('data-i18n-title'); if(key) el.setAttribute('title', t(key)); });
-}
 
 const LEVELS = [
   { level: 1, title: "Candidato", next: 200 },
@@ -134,11 +112,7 @@ function formatStatus(m){
 }
 
 function init(){
-  // carregar locale antes de renderizar textos dinâmicos
-  loadLocale(LOCALE).then(()=>{
-    applyTranslations();
-    renderCourses(); renderMissions(); renderGames(); renderEnergy(); updateHUD(); bindEvents(); animateHeroText();
-  });
+  renderCourses(); renderMissions(); renderGames(); renderEnergy(); updateHUD(); bindEvents(); animateHeroText();
 }
 
 function bindEvents(){
@@ -186,7 +160,7 @@ function openAction(action){
 }
 
 function renderCourses(){
-  $('#courseGrid').innerHTML=COURSES.map(c=>`<article class="course-card" data-course-card="${c.id}">${assetMarkup(c.iconPath, c.name, c.icon, 'course-asset')}<span class="course-tag">${c.tag}</span><h3>${c.name}</h3><p>${c.desc}</p><button class="pixel-button" data-course="${c.id}">${t('btn.explore')}</button></article>`).join('');
+  $('#courseGrid').innerHTML=COURSES.map(c=>`<article class="course-card" data-course-card="${c.id}">${assetMarkup(c.iconPath, c.name, c.icon, 'course-asset')}<span class="course-tag">${c.tag}</span><h3>${c.name}</h3><p>${c.desc}</p><button class="pixel-button" data-course="${c.id}">EXPLORAR</button></article>`).join('');
 }
 function renderMissions(){
   $('#missionGrid').innerHTML=MISSIONS.map(m=>{
@@ -215,9 +189,9 @@ function updateHUD(){
 
 function startJourney(){
   state.started=true; saveState(); playTone('start');
-  $('#heroSpeech').innerHTML=t('messages.journeyStarted');
+  $('#heroSpeech').innerHTML='Boa! Nossa primeira missão está esperando!';
   $('#mascotWrap').animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:450});
-  toast(t('messages.journeyStartedToast'));
+  toast('JORNADA INICIADA!');
   openMission(1);
 }
 
